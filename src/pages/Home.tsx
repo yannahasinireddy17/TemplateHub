@@ -58,13 +58,23 @@ export default function Home() {
                 {categoryTemplates.map(template => (
                   <div key={template.id} className="group rounded-2xl overflow-hidden flex flex-col cursor-pointer border border-[#333] hover:border-gray-600 transition-all hover:-translate-y-1">
                     {/* Top half */}
-                    <div className={`aspect-[3/2] flex flex-col items-center justify-center ${category.color} p-6 relative`}>
-                      <FileText className={`h-10 w-10 mb-4 opacity-80 ${category.textColor}`} strokeWidth={1.5} />
-                      <h3 className={`font-semibold text-lg text-center leading-tight opacity-90 px-4 ${category.textColor}`}>
-                        {template.title}
-                      </h3>
+                    <div className={`aspect-[3/2] flex flex-col items-center justify-center ${category.color} relative overflow-hidden`}>
+                      {template.image ? (
+                        <img 
+                          src={template.image} 
+                          alt={template.title} 
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="flex flex-col items-center justify-center p-6 transition-transform duration-500 group-hover:scale-105">
+                          <FileText className={`h-10 w-10 mb-4 opacity-80 ${category.textColor}`} strokeWidth={1.5} />
+                          <h3 className={`font-semibold text-lg text-center leading-tight opacity-90 px-4 ${category.textColor}`}>
+                            {template.title}
+                          </h3>
+                        </div>
+                      )}
                       {/* Hover overlay hint */}
-                      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-[0.03] transition-opacity"></div>
+                      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity"></div>
                     </div>
                     
                     {/* Bottom half */}

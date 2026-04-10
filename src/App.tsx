@@ -4,6 +4,8 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import CategoryPage from './pages/CategoryPage';
 import Login from './pages/Login';
+import Profile from './pages/Profile';
+import CreateTemplate from './pages/CreateTemplate';
 
 function AppContent() {
   const location = useLocation();
@@ -17,6 +19,8 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/category/:categoryId" element={<CategoryPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/create" element={<CreateTemplate />} />
         </Routes>
       </main>
     </div>

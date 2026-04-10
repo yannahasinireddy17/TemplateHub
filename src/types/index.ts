@@ -3,6 +3,7 @@ export interface Template {
   title: string;
   subtitle: string;
   categoryId: string;
+  image?: string;
 }
 
 export interface Category {
